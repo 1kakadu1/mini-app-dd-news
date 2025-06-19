@@ -1,4 +1,4 @@
-import { isFullscreen, requestFullscreen, expandViewport } from "@telegram-apps/sdk";
+import { isFullscreen, requestFullscreen, expandViewport } from "@telegram-apps/sdk-react";
 import { useEffect, useState } from "react";
 
 
