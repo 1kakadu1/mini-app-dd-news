@@ -45,6 +45,7 @@ table {
 }
 .main{
   overflow: hidden;
+  padding-top: 40px;
 }
 .main, .site{
   width: 100vw;
