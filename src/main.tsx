@@ -5,6 +5,7 @@ import App from "./App.tsx";
 import {
   init,
   miniApp,
+  viewport
 } from "@telegram-apps/sdk-react";
 //import './mockEnv.ts';
 const root = createRoot(document.getElementById("root")!);
@@ -18,20 +19,19 @@ const initializeTelegramSDK = async () => {
       eruda.position({ x: window.innerWidth - 50, y: 0 });
     });
 
-    // if (viewport.mount.isAvailable()) {
-    //   viewport.mount();
-    // }
+    if (viewport.mount.isAvailable()) {
+      await viewport.mount();
+      viewport.expand();
+      console.log("viewport", viewport.isExpanded(), viewport.isMounted())
+    }
 
-    // if (viewport.expand.isAvailable()) {
-    //   viewport.expand();
-    // }
 
-    // if (viewport.requestFullscreen.isAvailable()) {
-    //   await viewport.requestFullscreen();
-    // }
+    if (viewport.requestFullscreen.isAvailable()) {
+      await viewport.requestFullscreen();
+    }
 
     if (miniApp.mountSync.isAvailable()) {
-        miniApp.mountSync();
+      miniApp.mountSync();
     }
 
     if (miniApp.setHeaderColor.isAvailable()) {
@@ -47,7 +47,7 @@ const initializeTelegramSDK = async () => {
     }
 
   } catch (error) {
-    console.error("Ошибка инициализации:", error);
+    console.error("Ошибка инициализации:", JSON.stringify(error));
   }
 };
 
