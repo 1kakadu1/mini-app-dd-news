@@ -23,7 +23,8 @@ function App() {
           minHeight: "100vh",
         }}
       >
-        <iframe className="site" src="https://dd.news/" />
+        <pre>{JSON.stringify(window)}</pre>
+        {/* <iframe className="site" src="https://dd.news/" /> */}
       </div>
     </>
   );

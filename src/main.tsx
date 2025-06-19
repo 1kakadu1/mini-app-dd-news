@@ -11,7 +11,6 @@ const initializeTelegramSDK = async () => {
     await init();
     if (miniApp.ready.isAvailable()) {
       await miniApp.ready();
-      miniApp.setHeaderColor("transparent")
     }
   } catch (error) {
     console.error("Ошибка инициализации:", error);
