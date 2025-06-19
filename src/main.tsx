@@ -2,7 +2,7 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.tsx'
-import { init, miniApp, expandViewport, setDebug} from "@telegram-apps/sdk-react";
+import { init, miniApp, setDebug} from "@telegram-apps/sdk-react";
 import './mockEnv.ts';
 const root = createRoot(document.getElementById('root')!);
 
@@ -12,10 +12,6 @@ const initializeTelegramSDK = async () => {
     await init();
     if (miniApp.ready.isAvailable()) {
       await miniApp.ready();
-    }
-
-    if (expandViewport.isAvailable()) {
-       expandViewport();
     }
   } catch (error) {
     console.error("Ошибка инициализации:", error);

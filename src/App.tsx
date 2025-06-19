@@ -1,10 +1,17 @@
-import { isFullscreen, requestFullscreen } from "@telegram-apps/sdk";
+import { isFullscreen, requestFullscreen, expandViewport } from "@telegram-apps/sdk";
 import { useEffect, useState } from "react";
 
 
 function App() {
   const [error, setError] = useState("");
+  const [errorExp, setErrorExp] = useState("");
   const fullscreen = async ()=>{
+      if (expandViewport.isAvailable()) {
+       expandViewport();
+       setErrorExp("Success"+ expandViewport.isAvailable())
+      } else{
+        setErrorExp("Error"+ expandViewport.isAvailable())
+      }
       if (requestFullscreen.isAvailable()) {
        try {
          await requestFullscreen();
@@ -32,6 +39,7 @@ function App() {
         }}
       >
         {<h1>INFO: {error}</h1>}
+        {<h1>INFO exp: {errorExp}</h1>}
         <iframe className="site" src="https://dd.news/" />
       </div>
     </>
