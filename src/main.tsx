@@ -25,6 +25,7 @@ const initializeTelegramSDK = async () => {
       await viewport.mount();
       if(isMobile){
        viewport.expand();
+      
       }
 
     }

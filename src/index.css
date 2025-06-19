@@ -53,8 +53,8 @@ body{
 }
 .main{
 	display: flex;
-	align-items: center;
-	justify-content: center;
+	align-items: flex-end;
+	justify-content: flex-end;
 }
 .main, .site{
   width: 100vw;
