@@ -38,13 +38,13 @@ const initializeTelegramSDK = async () => {
       miniApp.setHeaderColor("#f8f5f6");
     }
 
-    if(miniApp.setBottomBarColor.isAvailable()){
-      miniApp.setBottomBarColor("#f8f5f6");
-    }
-
-    // if(miniApp.setBackgroundColor.isAvailable()){
-    //   miniApp.setBackgroundColor("#f8f5f6");
+    // if(miniApp.setBottomBarColor.isAvailable()){
+    //   miniApp.setBottomBarColor("#f8f5f6");
     // }
+
+    if(miniApp.setBackgroundColor.isAvailable()){
+      miniApp.setBackgroundColor("#f8f5f6");
+    }
 
   } catch (error) {
     console.error("Ошибка инициализации:", error);
