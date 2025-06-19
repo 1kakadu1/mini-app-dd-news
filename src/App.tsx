@@ -18,7 +18,7 @@ function App() {
         className="main"
         style={{
           paddingTop: size.top,
-          height: `calc(100vh - ${size.bottom})`
+          height: `calc(100vh - ${size.bottom}px)`
         }}
       > 
         <iframe className="site" src="https://dd.news/" />
