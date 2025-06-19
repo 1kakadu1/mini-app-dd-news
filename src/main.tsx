@@ -4,7 +4,6 @@ import "./index.css";
 import App from "./App.tsx";
 import {
   init,
-  expandViewport,
   miniApp,
   viewport,
 } from "@telegram-apps/sdk-react";
