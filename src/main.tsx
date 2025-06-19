@@ -5,7 +5,6 @@ import App from "./App.tsx";
 import {
   init,
   miniApp,
-  viewport,
 } from "@telegram-apps/sdk-react";
 //import './mockEnv.ts';
 const root = createRoot(document.getElementById("root")!);
@@ -19,24 +18,32 @@ const initializeTelegramSDK = async () => {
       eruda.position({ x: window.innerWidth - 50, y: 0 });
     });
 
-    if (viewport.mount.isAvailable()) {
-      viewport.mount();
-    }
+    // if (viewport.mount.isAvailable()) {
+    //   viewport.mount();
+    // }
 
-    if (viewport.expand.isAvailable()) {
-      viewport.expand();
-    }
+    // if (viewport.expand.isAvailable()) {
+    //   viewport.expand();
+    // }
 
-    if (viewport.requestFullscreen.isAvailable()) {
-      await viewport.requestFullscreen();
-    }
+    // if (viewport.requestFullscreen.isAvailable()) {
+    //   await viewport.requestFullscreen();
+    // }
 
     if (miniApp.mountSync.isAvailable()) {
         miniApp.mountSync();
     }
 
     if (miniApp.setHeaderColor.isAvailable()) {
-      miniApp.setHeaderColor("#ebeff2");
+      miniApp.setHeaderColor("#f8f5f6");
+    }
+
+    if(miniApp.setBottomBarColor.isAvailable()){
+      miniApp.setBottomBarColor("#f8f5f6");
+    }
+
+    if(miniApp.setBackgroundColor.isAvailable()){
+      miniApp.setBackgroundColor("#f8f5f6");
     }
 
   } catch (error) {
