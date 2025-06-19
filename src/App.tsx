@@ -1,4 +1,14 @@
+import { useEffect } from "react";
+import {
+  expandViewport
+} from "@telegram-apps/sdk-react";
+
 function App() {
+  useEffect(()=>{
+     if (expandViewport.isAvailable()) {
+       expandViewport();
+     }
+  },[])
   return (
     <>
       <div
