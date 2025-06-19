@@ -1,4 +1,4 @@
-//import { hideBackButton, hideSettingsButton, onBackButtonClick } from "@telegram-apps/sdk-react";
+
 import { useEffect } from "react";
 
 function App() {
@@ -23,11 +23,6 @@ function App() {
           minHeight: "100vh",
         }}
       >
-      {/* <button onClick={() => onBackButtonClick(()=>{
-          (window as any).Telegram.WebApp.close()
-      })}>
-        Закрыть приложение
-      </button> */}
         <iframe className="site" src="https://dd.news/" />
       </div>
     </>
