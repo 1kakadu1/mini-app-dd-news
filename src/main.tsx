@@ -23,14 +23,11 @@ const initializeTelegramSDK = async () => {
     if (viewport.mount.isAvailable()) {
       await viewport.mount();
       viewport.expand();
-      console.log("viewport", viewport.isExpanded(), viewport.isMounted())
-      console.log(viewport.safeAreaInsets(),viewport.contentSafeAreaInsets())
     }
 
 
     if (viewport.requestFullscreen.isAvailable()) {
       await viewport.requestFullscreen();
-      console.log(viewport.safeAreaInsets(),viewport.contentSafeAreaInsets())
     }
 
     if (miniApp.mountSync.isAvailable()) {
