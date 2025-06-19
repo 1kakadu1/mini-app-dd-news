@@ -17,10 +17,10 @@ function App() {
       <div
         className="main"
         style={{
-          paddingBottom: size.bottom,
           paddingTop: size.top,
+          height: `calc(100vh - ${size.bottom})`
         }}
-      >
+      > 
         <iframe className="site" src="https://dd.news/" />
       </div>
     </>
