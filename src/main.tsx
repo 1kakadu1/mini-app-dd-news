@@ -5,6 +5,7 @@ import App from "./App.tsx";
 import {
   init,
   miniApp,
+ // setDebug,
   viewport
 } from "@telegram-apps/sdk-react";
 //import './mockEnv.ts';
@@ -13,21 +14,23 @@ const root = createRoot(document.getElementById("root")!);
 const initializeTelegramSDK = async () => {
   try {
     init();
-
+   // setDebug(true)
     void import("eruda").then(({ default: eruda }) => {
       eruda.init();
-      eruda.position({ x: window.innerWidth - 50, y: 0 });
+      eruda.position({ x: window.innerWidth - 50, y: 100 });
     });
 
     if (viewport.mount.isAvailable()) {
       await viewport.mount();
       viewport.expand();
       console.log("viewport", viewport.isExpanded(), viewport.isMounted())
+      console.log(viewport.safeAreaInsets(),viewport.contentSafeAreaInsets())
     }
 
 
     if (viewport.requestFullscreen.isAvailable()) {
       await viewport.requestFullscreen();
+      console.log(viewport.safeAreaInsets(),viewport.contentSafeAreaInsets())
     }
 
     if (miniApp.mountSync.isAvailable()) {
