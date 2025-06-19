@@ -22,7 +22,7 @@ function App() {
           console.error("Failed to request fullscreen:", error);
        }
      } else {
-       setError("Fullscreen is not available")
+       setError("Fullscreen is not available",)
        console.warn("Fullscreen is not available");
      }
 }
@@ -38,7 +38,7 @@ function App() {
           minHeight: "100vh",
         }}
       >
-        {<h1>INFO: {error}</h1>}
+        {<h1>INFO: {error} {requestFullscreen.isAvailable()}</h1>}
         {<h1>INFO exp: {errorExp}</h1>}
         <iframe className="site" src="https://dd.news/" />
       </div>
