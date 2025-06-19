@@ -9,7 +9,6 @@ const initializeTelegramSDK = async () => {
     await init();
     if (miniApp.ready.isAvailable()) {
       await miniApp.ready();
-      //miniApp.setHeaderColor("#0cc1f8");
       console.log("Mini App готово");
     }
 
