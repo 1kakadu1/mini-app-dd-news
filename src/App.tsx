@@ -1,8 +1,8 @@
 import { hideBackButton, hideSettingsButton, onBackButtonClick } from "@telegram-apps/sdk-react";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
 function App() {
-  const [headerHeight, setHeaderHeight, ] = useState(0);
+  //const [headerHeight, setHeaderHeight, ] = useState(0);
 
   useEffect(() => {
     // if ((window as any).Telegram?.WebApp) {
@@ -19,7 +19,7 @@ function App() {
       <div
         className="main"
         style={{
-          paddingTop: headerHeight,
+          paddingTop: 0,
           minHeight: "100vh",
         }}
       >
