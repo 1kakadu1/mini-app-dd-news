@@ -11,7 +11,11 @@ const initializeTelegramSDK = async () => {
 
     init();
     expandViewport();
-    
+    void import('eruda').then(({ default: eruda }) => {
+      eruda.init();
+      eruda.position({ x: window.innerWidth - 50, y: 0 });
+    });
+      
     if (requestFullscreen.isAvailable()) {
         await requestFullscreen();
     } 
