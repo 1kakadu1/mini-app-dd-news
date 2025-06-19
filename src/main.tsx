@@ -10,17 +10,15 @@ const initializeTelegramSDK = async () => {
   try {
     setDebug(false)
     await init();
-    if (expandViewport.isAvailable()) {
-      if(expandViewport.isAvailable()){
-        expandViewport();
-      }
-      if (requestFullscreen.isAvailable()) {
-         await requestFullscreen();
-         console.log("Fullscreen requested:", isFullscreen()); // Check if it's actually fullscreen
-      } 
-     } else {
-       console.warn("Fullscreen is not available");
-     }
+
+    if(expandViewport.isAvailable()){
+      expandViewport();
+    }
+    
+    if (requestFullscreen.isAvailable()) {
+        await requestFullscreen();
+        console.log("Fullscreen requested:", isFullscreen()); // Check if it's actually fullscreen
+    } 
 
     if (miniApp.ready.isAvailable()) {
       await miniApp.ready();
